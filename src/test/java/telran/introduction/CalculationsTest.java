@@ -18,7 +18,7 @@ public class CalculationsTest {
 
 @Test 
     void divideTest() {
-        assertEquals(3, divide(9, 3));
+        assertEquals(4, divide(12, 3));
     }
 
 @Test
@@ -28,17 +28,17 @@ public class CalculationsTest {
 
 @Test 
     void sumOfDigitsTest() {
-        assertEquals(21, sumOfDigits(123456));
+        assertEquals(6, sumOfDigits(-123));
     }
 
 @Test
     void maxDigitTest() {
-        assertEquals(9, maxDigit(123495678));
+        assertEquals(3, maxDigit(-123));
     }
 
 @Test 
     void isDividedOnTest() {
-        assertEquals(true, isDividedOn(9, 3));
+        assertEquals(false, isDividedOn(-8, 3));
     }
 
 }

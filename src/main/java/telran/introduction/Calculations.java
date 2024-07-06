@@ -10,9 +10,8 @@ public static int multiply(int op1, int op2) {
     return res;
 }
 
-public static int divide(int op1, int op2) {
-    int res = op1 / op2;
-    return res;
+public static int divide(int op1, int op2) {  
+    return op2 == 0 ? 0 : op1 / op2;  
 }
 
 public static int subtract(int op1, int op2) {
@@ -22,6 +21,7 @@ public static int subtract(int op1, int op2) {
 
 public static int sumOfDigits(int number) {
     int sum = 0;
+    number = Math.abs(number);
     while (number != 0) {
         sum += number % 10;  
         number /= 10;      
@@ -31,6 +31,7 @@ public static int sumOfDigits(int number) {
 
 public static int maxDigit(int number) {
 int maxDigit = 0;
+number = Math.abs(number);
 while (number !=0) {
     int currentDigit;
     currentDigit = number % 10;
@@ -43,7 +44,7 @@ while (number !=0) {
 }
 
 public static boolean isDividedOn(int number, int divider) {
-    return number % divider == 0;
+    return divider != 0 && number % divider == 0;
 }
 
 }
