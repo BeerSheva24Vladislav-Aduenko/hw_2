@@ -19,6 +19,7 @@ public class CalculationsTest {
 @Test 
     void divideTest() {
         assertEquals(4, divide(12, 3));
+        assertThrowsExactly(ArithmeticException.class, () -> divide(10, 0));
     }
 
 @Test
@@ -29,16 +30,24 @@ public class CalculationsTest {
 @Test 
     void sumOfDigitsTest() {
         assertEquals(6, sumOfDigits(-123));
+        assertEquals(6, sumOfDigits(123));
+        assertEquals(0, sumOfDigits(0));
+        
     }
 
 @Test
     void maxDigitTest() {
-        assertEquals(3, maxDigit(-123));
+        assertEquals(4, maxDigit(-1234));
+        assertEquals(3, maxDigit(123));
+        assertEquals(0, maxDigit(0));
     }
 
 @Test 
     void isDividedOnTest() {
-        assertEquals(false, isDividedOn(-8, 3));
+        assertTrue(isDividedOn(12, 2));
+        assertTrue(isDividedOn(-10, 2));
+        assertFalse(isDividedOn(12, 0));
+        assertFalse(isDividedOn(10, 3));
     }
 
 }

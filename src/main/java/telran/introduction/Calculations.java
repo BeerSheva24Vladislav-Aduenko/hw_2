@@ -6,17 +6,15 @@ public static int sum(int op1, int op2) {
     return res;
 }
 public static int multiply(int op1, int op2) {
-    int res = op1 * op2;
-    return res;
+    return op1 * op2;
 }
 
 public static int divide(int op1, int op2) {  
-    return op2 == 0 ? 0 : op1 / op2;  
+    return op1 / op2;  
 }
 
 public static int subtract(int op1, int op2) {
-  int res = op1 - op2;
-    return res;
+    return op1 - op2;
 }
 
 public static int sumOfDigits(int number) {
@@ -33,11 +31,7 @@ public static int maxDigit(int number) {
 int maxDigit = 0;
 number = Math.abs(number);
 while (number !=0) {
-    int currentDigit;
-    currentDigit = number % 10;
-    if (maxDigit < currentDigit) {
-        maxDigit = currentDigit;
-    }
+    maxDigit = Math.max(maxDigit, number % 10);
     number /= 10;
 }
     return maxDigit;
